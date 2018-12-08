@@ -1,3 +1,21 @@
-div{
-    background: red;
+*{
+    margin: 0;
+    padding: 0;
+}
+
+ul{
+    list-style: none;
+}
+
+.container{
+    display: flex;
+    flex-direction: row;
+}
+
+.nav-box{
+    flex: 1;
+}
+
+.content{
+    flex: 5;
 }

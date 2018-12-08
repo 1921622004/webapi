@@ -2,6 +2,7 @@ const path = require('path');
 const webpack = require('webpack');
 const htmlWebpackPlugin = require('html-webpack-plugin');
 const cleanWebpackPlugin = require('clean-webpack-plugin');
+const Visualizer = require('webpack-visualizer-plugin');
 
 
 module.exports = {
@@ -36,6 +37,7 @@ module.exports = {
         new htmlWebpackPlugin({
             template:'./src/index.html'
         }),
-        new webpack.HotModuleReplacementPlugin()
+        new webpack.HotModuleReplacementPlugin(),
+        new Visualizer({filename:'./status.html'})
     ]
 }
