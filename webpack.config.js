@@ -3,6 +3,7 @@ const webpack = require('webpack');
 const htmlWebpackPlugin = require('html-webpack-plugin');
 const cleanWebpackPlugin = require('clean-webpack-plugin');
 const Visualizer = require('webpack-visualizer-plugin');
+const ExtractTextWebpackPlugin = require('extract-text-webpack-plugin');
 
 
 module.exports = {
@@ -13,16 +14,16 @@ module.exports = {
         filename:'index.bundle.js'
     },
     devServer:{
-        contentBase:'./build'
+        contentBase:'./build',
+        compress:true,
+        open:true,
+        hot:true
     },
     module:{
         rules:[
             {
                 test:/\.css$/,
-                use:[
-                    {loader:'style-loader'},
-                    {loader:'css-loader'}
-                ]
+                use:ExtractTextWebpackPlugin.extract(['css-loader'])
             },
             {
                 test:/\.js$/,
@@ -33,9 +34,17 @@ module.exports = {
         ]
     },
     plugins:[
+        new ExtractTextWebpackPlugin({
+            filename:'index.css'
+        }),
         new cleanWebpackPlugin(['./build']),
         new htmlWebpackPlugin({
-            template:'./src/index.html'
+            template:'./src/index.html',
+            minify:{
+                removeAttributeQuotes:true,
+                collapseWhitespace: true,
+
+            }
         }),
         new webpack.HotModuleReplacementPlugin(),
         new Visualizer({filename:'./status.html'})
