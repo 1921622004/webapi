@@ -4,8 +4,6 @@ class PageLifecycle extends Component {
   state = { count: 1 }
 
   updateFn = () => {
-    console.log('============');
-    
     let { count } = this.state;
     this.setState({ count: ++count });
     document.title = `count:${count}`
@@ -37,8 +35,6 @@ class PageLifecycle extends Component {
 
   render() {
     const { count } = this.state;
-    console.log(count ,'=== ==== ');
-    
     return (
       <Fragment>
         <h1>PageLifecycle</h1>

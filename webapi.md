@@ -10,6 +10,10 @@ window.addEventListener('visibilitychange',() => {
     }
 })
 
+（1）微信内置的浏览器因为没有标签，所以不会触发该事件。
+（2）手机端直接按Home键回到桌面，也不会触发该事件。
+（3）PC端浏览器失去焦点不会触发该事件，但是最小化，或回到桌面会触发。
+
 usage:
 video 
 game
