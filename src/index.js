@@ -5,6 +5,7 @@ import "./index.css";
 
 import PageLifecycle from "./components/PageLifecycle";
 import OnlineState from "./components/OnlineState";
+import Vibrate from "./components/Vibrate";
 
 class App extends Component {
   render() {
@@ -30,11 +31,21 @@ class App extends Component {
                 online state
               </Link>
             </li>
+            <li>
+              <Link
+                to={{
+                  pathname:'/vibrate'
+                }}
+              >
+                vibrate
+              </Link>
+            </li>
           </ul>
           <div className="content">
             <Switch>
               <Route path="/pageLifecycle" component={PageLifecycle} exact />
               <Route path="/onlineState" component={OnlineState} exact />
+              <Route path="/vibrate" component={Vibrate} exact />
             </Switch>
           </div>
         </div>
