@@ -6,6 +6,7 @@ import "./index.css";
 import PageLifecycle from "./components/PageLifecycle";
 import OnlineState from "./components/OnlineState";
 import Vibrate from "./components/Vibrate";
+import DeviceOrientation from "./components/DeviceOrientation";
 
 class App extends Component {
   render() {
@@ -40,12 +41,22 @@ class App extends Component {
                 vibrate
               </Link>
             </li>
+            <li>
+              <Link
+                to={{
+                  pathname:'/deviceOrientation'
+                }}
+              >
+                device orientation
+              </Link>
+            </li>
           </ul>
           <div className="content">
             <Switch>
               <Route path="/pageLifecycle" component={PageLifecycle} exact />
               <Route path="/onlineState" component={OnlineState} exact />
               <Route path="/vibrate" component={Vibrate} exact />
+              <Route path="/deviceOrientation" component={DeviceOrientation} exact />
             </Switch>
           </div>
         </div>

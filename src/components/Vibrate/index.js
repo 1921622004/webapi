@@ -1,8 +1,12 @@
-import React, { Component, Fragment } from "react";
+import React, { Fragment } from "react";
 
 function Vibrate() {
   const startFn = () => {
-    window.navigator.vibrate(2000)
+    if("vibrate" in navigator){
+      window.navigator.vibrate([3000,2000,1000]);
+    } else {
+      alert('no support for vibrate')
+    }
   }
 
   const stopFn = () => {
