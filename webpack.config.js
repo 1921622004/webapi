@@ -29,7 +29,7 @@ module.exports = {
     compress: true,
     open: true,
     hot: true,
-    host: '30.26.221.136'
+    host: '172.168.2.102'
   },
   module: {
     rules: [

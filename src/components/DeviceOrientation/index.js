@@ -3,12 +3,12 @@ import "./index.css";
 
 function thorttl(callback,delay){
   let timer = null;
-  return function (arguments){
+  return function (arg){
     if(timer){
       clearTimeout(this.timer);
       this.timer = null;
     };
-    timer = setTimeout(callback.bind(arguments),delay);
+    timer = setTimeout(callback.bind(null,arg),delay);
   }
 }
 
@@ -21,16 +21,28 @@ class DeviceOrientation extends Component {
   }
 
   handler = ev => {
-    console.log(ev);
-    
+    this.setState({
+      gamma:ev.gamma,
+      beta:ev.beta,
+      alpha:ev.alpha
+    })
   }
 
+  thorttlHandler = thorttl(this.handler,16);
+
   componentDidMount() {
-    window.addEventListener('deviceorientation', thorttl(this.handler,16))
+    window.addEventListener('deviceorientation', this.thorttlHandler);
+  }
+
+  componentWillUnmount(){
+    window.removeEventListener('deviceorientation',this.thorttlHandler);
   }
 
   render() {
     const { gamma, beta, alpha } = this.state;
+    let rotateZ = (360 - alpha).toFixed(2);
+    let rotateX = (360 - beta).toFixed(2);
+    let rotateY = (360 - gamma).toFixed(2);
     return (
       <Fragment>
         <div>
@@ -39,7 +51,9 @@ class DeviceOrientation extends Component {
           <p>Alpha:{alpha}</p>
         </div>
         <div className="cube-wrapper">
-          <div className="cube-box">
+          <div className="cube-box" style={{
+            transform:`rotateX(${rotateX}deg) rotateY(${rotateY}deg) rotateZ(${rotateZ}deg)`
+          }}>
             <div className="cube-a cube">a</div>
             <div className="cube-b cube">b</div>
             <div className="cube-c cube">c</div>
