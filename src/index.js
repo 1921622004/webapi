@@ -7,6 +7,7 @@ import PageLifecycle from "./components/PageLifecycle";
 import OnlineState from "./components/OnlineState";
 import Vibrate from "./components/Vibrate";
 import DeviceOrientation from "./components/DeviceOrientation";
+import Clipboard from "./components/Clipboard";
 
 class App extends Component {
   render() {
@@ -50,6 +51,15 @@ class App extends Component {
                 device orientation
               </Link>
             </li>
+            <li>
+              <Link
+                to={{
+                  pathname:'/clipboard'
+                }}
+              >
+              clipboard
+              </Link>
+            </li>
           </ul>
           <div className="content">
             <Switch>
@@ -57,6 +67,7 @@ class App extends Component {
               <Route path="/onlineState" component={OnlineState} exact />
               <Route path="/vibrate" component={Vibrate} exact />
               <Route path="/deviceOrientation" component={DeviceOrientation} exact />
+              <Route path="/clipboard" component={Clipboard} exact />
             </Switch>
           </div>
         </div>

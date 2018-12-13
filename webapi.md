@@ -75,6 +75,12 @@ document.addEventListener('copy || cut || paste',e => {
 ```
 clipborad.js
 
+The copy event fires when the user initiates a copy action through browser UI (such as the Ctrl/⌘+C keyboard shortcut or selecting "Copy" from a menu), and in response to an allowed document.execCommand('copy') call.
+
+https://developer.mozilla.org/en-US/docs/Web/API/DataTransfer/setData
+https://developer.mozilla.org/zh-CN/docs/Web/API/Document/execCommand
+https://blog.csdn.net/qw12312312/article/details/71037060
+
 ### ambient light
 ```js
 window.addEventListener('devicelight',e => {
