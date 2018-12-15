@@ -1,7 +1,5 @@
 import React, { Component, Fragment, createRef } from "react";
 
-import "./index.css";
-
 class ExecCommand extends Component {
 
   document = createRef(null);
