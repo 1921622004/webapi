@@ -11,6 +11,7 @@ import Clipboard from "./components/Clipboard";
 import AmbientLight from "./components/AmbientLight";
 import BatteryStatus from "./components/BatteryStatus";
 import CustomEventComponent from "./components/CustomEvent";
+import ExecCommand from "./components/ExecCommand";
 
 class App extends Component {
   render() {
@@ -58,6 +59,11 @@ class App extends Component {
                 custom event
               </Link>
             </li>
+            <li>
+              <Link to={{ pathname: '/execCommand' }}>
+                execCommand
+              </Link>
+            </li>
           </ul>
           <div className="content">
             <Switch>
@@ -69,6 +75,7 @@ class App extends Component {
               <Route path="/ambientLight" component={AmbientLight} exact />
               <Route path="/batteryStatus" component={BatteryStatus} exact />
               <Route path="/customEvent" component={CustomEventComponent} exact />
+              <Route path="/execCommand" component={ExecCommand} exact />
             </Switch>
           </div>
         </div>
