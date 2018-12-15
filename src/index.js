@@ -9,6 +9,7 @@ import Vibrate from "./components/Vibrate";
 import DeviceOrientation from "./components/DeviceOrientation";
 import Clipboard from "./components/Clipboard";
 import AmbientLight from "./components/AmbientLight";
+import BatteryStatus from "./components/BatteryStatus";
 
 class App extends Component {
   render() {
@@ -46,6 +47,11 @@ class App extends Component {
                 ambient light
               </Link>
             </li>
+            <li>
+              <Link to={{ pathname: '/batteryStatus' }}>
+                battery status
+              </Link>
+            </li>
           </ul>
           <div className="content">
             <Switch>
@@ -55,6 +61,7 @@ class App extends Component {
               <Route path="/deviceOrientation" component={DeviceOrientation} exact />
               <Route path="/clipboard" component={Clipboard} exact />
               <Route path="/ambientLight" component={AmbientLight} exact />
+              <Route path="/batteryStatus" component={BatteryStatus} exact />
             </Switch>
           </div>
         </div>
