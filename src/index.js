@@ -10,6 +10,7 @@ import DeviceOrientation from "./components/DeviceOrientation";
 import Clipboard from "./components/Clipboard";
 import AmbientLight from "./components/AmbientLight";
 import BatteryStatus from "./components/BatteryStatus";
+import CustomEventComponent from "./components/CustomEvent";
 
 class App extends Component {
   render() {
@@ -52,6 +53,11 @@ class App extends Component {
                 battery status
               </Link>
             </li>
+            <li>
+              <Link to={{ pathname: '/customevent' }}>
+                custom event
+              </Link>
+            </li>
           </ul>
           <div className="content">
             <Switch>
@@ -62,6 +68,7 @@ class App extends Component {
               <Route path="/clipboard" component={Clipboard} exact />
               <Route path="/ambientLight" component={AmbientLight} exact />
               <Route path="/batteryStatus" component={BatteryStatus} exact />
+              <Route path="/customEvent" component={CustomEventComponent} exact />
             </Switch>
           </div>
         </div>
