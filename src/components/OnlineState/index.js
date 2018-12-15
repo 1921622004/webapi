@@ -11,8 +11,6 @@ class OnlineState extends Component {
   }
 
   onlineHandler = () => {
-    console.log(navigator.onLine);
-    
     this.timer = setInterval(this.updateHandler,1000);
   }
 

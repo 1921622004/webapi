@@ -35,7 +35,6 @@ usage:
 game
 validate
 
-
 ### device orientation
 window.addEventListener('deviceorientation',e => {
     console.log('Gamma:',e.gamma);
