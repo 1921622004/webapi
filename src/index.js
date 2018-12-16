@@ -7,7 +7,6 @@ import PageLifecycle from "./components/PageLifecycle";
 import OnlineState from "./components/OnlineState";
 import Vibrate from "./components/Vibrate";
 import DeviceOrientation from "./components/DeviceOrientation";
-import Clipboard from "./components/Clipboard";
 import AmbientLight from "./components/AmbientLight";
 import BatteryStatus from "./components/BatteryStatus";
 import CustomEventComponent from "./components/CustomEvent";
@@ -40,11 +39,6 @@ class App extends Component {
               </Link>
             </li>
             <li>
-              <Link to={{ pathname: '/clipboard' }} >
-                clipboard
-              </Link>
-            </li>
-            <li>
               <Link to={{ pathname: '/ambientLight' }}>
                 ambient light
               </Link>
@@ -71,7 +65,6 @@ class App extends Component {
               <Route path="/onlineState" component={OnlineState} exact />
               <Route path="/vibrate" component={Vibrate} exact />
               <Route path="/deviceOrientation" component={DeviceOrientation} exact />
-              <Route path="/clipboard" component={Clipboard} exact />
               <Route path="/ambientLight" component={AmbientLight} exact />
               <Route path="/batteryStatus" component={BatteryStatus} exact />
               <Route path="/customEvent" component={CustomEventComponent} exact />
