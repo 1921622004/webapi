@@ -6,7 +6,6 @@
  - onlineState
  - ambient light sensor
  - 利用deviceOrientation制作一个随着手机旋转的正方体
- - copy事件 以及 使用execCommand完成复制粘贴功能
  - battery status
  - custom event
  - 利用execCommand完成一个简单的富文本
@@ -94,20 +93,7 @@ window.addEventListener('deviceorientation',e => {
 
 #### 浏览器支持度
 
-### copy事件 & 复制粘贴
-复制粘贴这个功能很常用了，比如各种资源网站，点击一下复制内容到你的剪切板，这个功能怎么做呢？大家请看代码。
 
-#### 用法
-```javascript
-let input = document.querySelector('#input');
-// 要先获取焦点
-input.focus();
-// 设置选中长度
-input.setSelectionRange(0,input.value.length);
-// execCommand 这个API稍后会详细的介绍
-document.execCommand('copy');
-// 
-```
 
 
 
